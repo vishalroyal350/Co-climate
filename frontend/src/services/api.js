@@ -1,32 +1,8 @@
-const API_PORTS = [5000, 5001, 5002, 5003, 5004, 5005];
-let cachedBaseUrl = null;
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 export async function getApiBaseUrl() {
-  if (cachedBaseUrl) return cachedBaseUrl;
-
-  try {
-    const response = await fetch('/api/health', { method: 'GET' });
-    if (response.ok) {
-      cachedBaseUrl = '';
-      return '';
-    }
-  } catch (error) {
-    // Fall back to scanning localhost ports
-  }
-
-  for (const port of API_PORTS) {
-    try {
-      const response = await fetch(`http://localhost:${port}/api/health`, { method: 'GET' });
-      if (response.ok) {
-        cachedBaseUrl = `http://localhost:${port}`;
-        return cachedBaseUrl;
-      }
-    } catch (error) {
-      // Try next port
-    }
-  }
-  cachedBaseUrl = 'http://localhost:5000';
-  return cachedBaseUrl;
+  return API_BASE_URL;
 }
 
 async function request(endpoint, options = {}) {
