@@ -1,0 +1,13 @@
+{
+  "name": "co-climate-workspace",
+  "version": "1.0.0",
+  "description": "Root workspace workspace runner for Co-Climate",
+  "scripts": {
+    "postinstall": "cd backend && npm install && cd ../frontend && npm install",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev"
+  }
+}

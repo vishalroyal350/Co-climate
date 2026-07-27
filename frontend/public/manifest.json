@@ -1,0 +1,25 @@
+{
+  "name": "Co-Climate Dashboard",
+  "short_name": "Co-Climate",
+  "description": "Reforestation project monitoring dashboard with field photo capture, GPS site tagging, and live weather.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F5F7FA",
+  "theme_color": "#2E7D32",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
