@@ -24,6 +24,11 @@ export default function DashboardLayout({ children, activeView, setActiveView, u
     fetchActiveProject();
   }, [activeProjectId]);
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('coclimate_theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
+
   const toggleTheme = () => {
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
     const nextTheme = currentTheme === 'light' ? 'dark' : 'light';

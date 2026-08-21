@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Co-Climate - Forest Restoration & ESG Plantation Dashboard</title>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('coclimate_theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
     <!-- PWA support: installable on Android/iOS/desktop -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#2E7D32">

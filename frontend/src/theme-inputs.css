@@ -1,0 +1,161 @@
+﻿/*
+ * theme-inputs.css
+ * Global theme-aware styles for ALL form inputs, search bars, selects,
+ * textareas, and their placeholder text across the entire application.
+ *
+ * Light Mode  -- white background, medium-gray placeholder (#6B7280)
+ * Dark Mode   -- dark green background, light-gray placeholder (#BDBDBD)
+ */
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES (theme tokens for inputs)
+   ============================================================ */
+:root {
+    --input-bg:           #ffffff;
+    --input-color:        #0F172A;
+    --input-border:       #CBD5E1;
+    --input-placeholder:  #6B7280;
+    --input-bg-focus:     #ffffff;
+    --input-color-focus:  #0F172A;
+    --input-border-focus: #2E7D32;
+    --input-bg-disabled:  #F1F5F9;
+    --input-color-disabled:#94A3B8;
+    --input-shadow-focus: 0 0 0 0.2rem rgba(46, 125, 50, 0.2);
+}
+
+[data-theme="dark"] {
+    --input-bg:           #1a2a22;
+    --input-color:        #E2E8F0;
+    --input-border:       #324a3e;
+    --input-placeholder:  #BDBDBD;
+    --input-bg-focus:     #1e3428;
+    --input-color-focus:  #ffffff;
+    --input-border-focus: #2E7D32;
+    --input-bg-disabled:  #0d1612;
+    --input-color-disabled:#6b8a74;
+    --input-shadow-focus: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+}
+
+/* ============================================================
+   BASE INPUT STYLES
+   ============================================================ */
+input,
+select,
+textarea,
+.form-control,
+.form-control-sm,
+.form-control-lg,
+.form-control-plaintext,
+.form-select,
+.form-select-sm,
+.form-select-lg {
+    background-color: var(--input-bg) !important;
+    color: var(--input-color) !important;
+    border-color: var(--input-border) !important;
+    caret-color: var(--input-color) !important;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* ============================================================
+   FOCUS STATES
+   ============================================================ */
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus,
+.form-control-sm:focus,
+.form-control-lg:focus,
+.form-select:focus {
+    background-color: var(--input-bg-focus) !important;
+    color: var(--input-color-focus) !important;
+    border-color: var(--input-border-focus) !important;
+    box-shadow: var(--input-shadow-focus) !important;
+    outline: none !important;
+}
+
+/* ============================================================
+   PLACEHOLDER - EACH BROWSER NEEDS ITS OWN SEPARATE RULE
+   (combining selectors in a list makes all browsers ignore them)
+   ============================================================ */
+input::placeholder           { color: var(--input-placeholder) !important; opacity: 1 !important; }
+textarea::placeholder         { color: var(--input-placeholder) !important; opacity: 1 !important; }
+.form-control::placeholder    { color: var(--input-placeholder) !important; opacity: 1 !important; }
+.form-control-sm::placeholder { color: var(--input-placeholder) !important; opacity: 1 !important; }
+.form-control-lg::placeholder { color: var(--input-placeholder) !important; opacity: 1 !important; }
+
+input::-webkit-input-placeholder            { color: var(--input-placeholder) !important; opacity: 1 !important; }
+textarea::-webkit-input-placeholder         { color: var(--input-placeholder) !important; opacity: 1 !important; }
+.form-control::-webkit-input-placeholder    { color: var(--input-placeholder) !important; opacity: 1 !important; }
+.form-control-sm::-webkit-input-placeholder { color: var(--input-placeholder) !important; opacity: 1 !important; }
+.form-control-lg::-webkit-input-placeholder { color: var(--input-placeholder) !important; opacity: 1 !important; }
+
+input::-moz-placeholder            { color: var(--input-placeholder) !important; opacity: 1 !important; }
+textarea::-moz-placeholder         { color: var(--input-placeholder) !important; opacity: 1 !important; }
+.form-control::-moz-placeholder    { color: var(--input-placeholder) !important; opacity: 1 !important; }
+.form-control-sm::-moz-placeholder { color: var(--input-placeholder) !important; opacity: 1 !important; }
+.form-control-lg::-moz-placeholder { color: var(--input-placeholder) !important; opacity: 1 !important; }
+
+input:-ms-input-placeholder            { color: var(--input-placeholder) !important; }
+textarea:-ms-input-placeholder         { color: var(--input-placeholder) !important; }
+.form-control:-ms-input-placeholder    { color: var(--input-placeholder) !important; }
+.form-control-sm:-ms-input-placeholder { color: var(--input-placeholder) !important; }
+
+/* ============================================================
+   DISABLED & READONLY STATES
+   ============================================================ */
+input:disabled,
+select:disabled,
+textarea:disabled,
+.form-control:disabled,
+.form-control[disabled],
+.form-select:disabled,
+.form-control[readonly],
+.form-select[readonly] {
+    background-color: var(--input-bg-disabled) !important;
+    color: var(--input-color-disabled) !important;
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+input:disabled::placeholder           { color: var(--input-color-disabled) !important; opacity: 1 !important; }
+.form-control:disabled::placeholder   { color: var(--input-color-disabled) !important; opacity: 1 !important; }
+.form-control[readonly]::placeholder  { color: var(--input-color-disabled) !important; opacity: 1 !important; }
+
+/* ============================================================
+   INPUT GROUP ADDONS
+   ============================================================ */
+.input-group-text {
+    background-color: var(--input-bg) !important;
+    border-color: var(--input-border) !important;
+    color: var(--input-placeholder) !important;
+}
+
+/* ============================================================
+   FORM LABELS
+   ============================================================ */
+label,
+.form-label,
+.form-check-label,
+.col-form-label {
+    color: var(--text-main) !important;
+}
+
+/* ============================================================
+   FORM CHECK (checkboxes, radios)
+   ============================================================ */
+[data-theme="dark"] .form-check-input {
+    background-color: var(--input-bg) !important;
+    border-color: var(--input-border) !important;
+}
+[data-theme="dark"] .form-check-input:checked {
+    background-color: #2E7D32 !important;
+    border-color: #2E7D32 !important;
+}
+
+/* ============================================================
+   SELECT DROPDOWN OPTIONS
+   ============================================================ */
+[data-theme="dark"] select option,
+[data-theme="dark"] .form-select option {
+    background-color: #1a2a22 !important;
+    color: #e2e8f0 !important;
+}

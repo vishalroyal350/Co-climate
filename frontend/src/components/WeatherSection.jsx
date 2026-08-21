@@ -291,7 +291,7 @@ export default function WeatherSection({ weatherHistory, loading }) {
                   <div className="col-6 col-sm-4" key={i}>
                     <div className="p-3 border rounded-3 text-center transition-all hover-translate-y shadow-sm" style={{ background: item.bg, border: '1px solid rgba(0,0,0,0.04)' }}>
                       <span className="text-muted d-block small mb-1.5 fw-semibold">{item.label}</span>
-                      <strong className="fs-5 text-dark font-Outfit"><i className={`bi ${item.icon} me-1.5`}></i>{item.val}</strong>
+                      <strong className="fs-5 font-Outfit"><i className={`bi ${item.icon} me-1.5`}></i>{item.val}</strong>
                     </div>
                   </div>
                 ))}
@@ -349,7 +349,7 @@ export default function WeatherSection({ weatherHistory, loading }) {
                 {displayDataPoints.map((item, idx) => (
                   <div 
                     key={idx} 
-                    className="border rounded-3 p-3 bg-white shadow-sm flex-shrink-0 text-center hover-translate-y" 
+                    className="border rounded-3 p-3 theme-surface shadow-sm flex-shrink-0 text-center hover-translate-y" 
                     style={{ width: '135px', transition: 'all 0.2s', border: '1px solid rgba(46, 125, 50, 0.08)' }}
                   >
                     <span className="badge bg-success bg-opacity-10 text-success fw-bold px-2 py-1 rounded mb-1" style={{ fontSize: '10px' }}>
@@ -359,7 +359,7 @@ export default function WeatherSection({ weatherHistory, loading }) {
                     <div className="mb-2">
                       <i className={`bi ${getWeatherIcon(item.condition)}`} style={{ fontSize: '28px' }}></i>
                     </div>
-                    <strong className="fs-6 text-dark font-Outfit d-block">{item.temp}°C</strong>
+                    <strong className="fs-6 font-Outfit d-block">{item.temp}°C</strong>
                     <span className="text-secondary small d-block text-truncate mt-1" style={{ fontSize: '10px' }}>{item.condition}</span>
                     <div className="mt-2 pt-2 border-top d-flex justify-content-between align-items-center text-muted" style={{ fontSize: '10px' }}>
                       <span><i className="bi bi-droplet-fill text-primary"></i> {item.humidity}%</span>

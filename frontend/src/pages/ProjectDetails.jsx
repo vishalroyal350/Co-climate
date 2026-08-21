@@ -277,7 +277,7 @@ export default function ProjectDetails() {
 
               <div className="restore-list d-flex flex-column gap-3">
                 {filteredProjects.length === 0 ? (
-                  <div className="text-center text-muted py-5 border rounded" style={{ backgroundColor: '#F8F9FA' }}>
+                  <div className="text-center text-muted py-5 border rounded theme-surface">
                     <i className="bi bi-folder-x display-4 text-muted mb-2"></i>
                     <p className="mb-0">No Restoration Projects Found</p>
                   </div>
@@ -456,7 +456,7 @@ export default function ProjectDetails() {
                   </div>
 
                   {/* Coordinates Section with Use Current Location */}
-                  <div className="mb-3 border p-3 rounded" style={{ backgroundColor: '#F8F9FA' }}>
+                  <div className="mb-3 border p-3 rounded theme-surface">
                     <div className="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
                       <label className="form-label mb-0 fw-semibold">Centroid GPS Coordinates</label>
                       <div className="d-flex gap-2">

@@ -63,25 +63,25 @@ export default function Performance() {
           {/* Quick Metrics Row */}
           <div className="row g-3 mb-4">
             <div className="col-3">
-              <div className="p-3 border rounded bg-white text-center shadow-sm">
+              <div className="p-3 border rounded theme-surface text-center shadow-sm">
                 <span className="text-muted d-block small mb-1">Assigned Tasks</span>
-                <strong className="fs-4 text-dark">{totalAssigned}</strong>
+                <strong className="fs-4">{totalAssigned}</strong>
               </div>
             </div>
             <div className="col-3">
-              <div className="p-3 border rounded bg-white text-center shadow-sm">
+              <div className="p-3 border rounded theme-surface text-center shadow-sm">
                 <span className="text-muted d-block small mb-1">Approved</span>
                 <strong className="fs-4 text-success">{approvedCount}</strong>
               </div>
             </div>
             <div className="col-3">
-              <div className="p-3 border rounded bg-white text-center shadow-sm">
+              <div className="p-3 border rounded theme-surface text-center shadow-sm">
                 <span className="text-muted d-block small mb-1">Pending Review</span>
                 <strong className="fs-4 text-warning">{pendingCount}</strong>
               </div>
             </div>
             <div className="col-3">
-              <div className="p-3 border rounded bg-white text-center shadow-sm">
+              <div className="p-3 border rounded theme-surface text-center shadow-sm">
                 <span className="text-muted d-block small mb-1">Needs Revision</span>
                 <strong className="fs-4 text-danger">{rejectedCount}</strong>
               </div>
@@ -180,7 +180,7 @@ export default function Performance() {
                     {m.score && (
                       <div className="mt-2">
                         <span className="badge bg-success bg-opacity-10 text-success border border-success me-2">Rating: {m.score}</span>
-                        <span className="small text-dark font-Outfit"><b>Feedback:</b> {m.remarks || 'No evaluation remarks.'}</span>
+                        <span className="small font-Outfit"><b>Feedback:</b> {m.remarks || 'No evaluation remarks.'}</span>
                       </div>
                     )}
                   </div>

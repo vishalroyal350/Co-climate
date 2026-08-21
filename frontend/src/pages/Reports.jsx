@@ -196,7 +196,7 @@ export default function Reports() {
           </div>
 
           {generatedPdfBase64 && (
-            <div className="mt-4 border p-3 rounded bg-white">
+            <div className="mt-4 border p-3 rounded theme-surface">
               <div className="d-flex justify-content-between align-items-center mb-3">
                 <span className="fw-bold text-success-dark">Report Preview Ready: {customReportType} ({customProjectType})</span>
                 <div className="d-flex gap-2">
@@ -311,7 +311,7 @@ export default function Reports() {
                     <input type="text" className="form-control" required value={reportTitle} onChange={(e) => setReportTitle(e.target.value)} />
                   </div>
                   
-                  <div className="border p-3 rounded" style={{ backgroundColor: '#F8F9FA' }}>
+                  <div className="border p-3 rounded theme-surface">
                     <label className="form-label fw-bold d-block mb-2">Sections to Request</label>
                     <div className="form-check mb-2">
                       <input className="form-check-input" type="checkbox" id="checkMilestones" checked={includeMilestones} onChange={(e) => setIncludeMilestones(e.target.checked)} />
